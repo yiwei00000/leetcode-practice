@@ -23,18 +23,19 @@ public class QuickSort {
             quickSort(arr, 0, partitionIndex - 1);
             quickSort(arr, partitionIndex + 1, right);
         }
-        swap(arr, left, partitionIndex);
+
     }
 
     private static int partition(int[] arr, int left, int right) {
 
         int index = left + 1;
-        for (int i = index; i < right; i++) {
+        for (int i = index; i <= right; i++) {
             if (arr[i] < arr[left]) {
                 swap(arr, i, index);
                 index++;
             }
         }
+        swap(arr, left, index - 1);
         return index - 1;
     }
 
